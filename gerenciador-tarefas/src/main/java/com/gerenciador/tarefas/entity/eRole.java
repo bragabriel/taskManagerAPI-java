@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @Getter
 @Setter
-public class Role implements Serializable {
+public class eRole implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -23,5 +23,5 @@ public class Role implements Serializable {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
-    private List<User> users;
+    private List<eUser> eUsers;
 }

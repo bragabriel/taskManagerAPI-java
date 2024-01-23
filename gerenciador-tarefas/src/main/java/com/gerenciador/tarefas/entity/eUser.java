@@ -1,9 +1,7 @@
 package com.gerenciador.tarefas.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +11,7 @@ import java.util.List;
 @Data
 @Getter
 @Setter
-public class User implements Serializable {
+public class eUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,5 +31,5 @@ public class User implements Serializable {
             inverseJoinColumns = @JoinColumn(name="role_id"), //Junção das colunas será também pela role_id (tabela role)
             uniqueConstraints = @UniqueConstraint(columnNames = {"usuario_id", "role_id"} //Chave unica de acordo com o usuário e role id
     ))
-    private List<Role> roles;
+    private List<eRole> eRoles;
 }
