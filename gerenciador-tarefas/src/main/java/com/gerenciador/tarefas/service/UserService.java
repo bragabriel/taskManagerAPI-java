@@ -1,6 +1,6 @@
 package com.gerenciador.tarefas.service;
 
-import com.gerenciador.tarefas.entity.User;
+import com.gerenciador.tarefas.entity.eUser;
 import com.gerenciador.tarefas.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,19 +13,19 @@ public class UserService {
     @Autowired
     private IUserRepository iUserRepository;
 
-    public User saveUser(User user){
-        return this.iUserRepository.save(user);
+    public eUser saveUser(eUser eUser){
+        return this.iUserRepository.save(eUser);
     }
 
-    public User updateUser(User user){
-        return this.iUserRepository.save(user);
+    public eUser updateUser(eUser eUser){
+        return this.iUserRepository.save(eUser);
     }
 
-    public void deleteUser(User user){
-        this.iUserRepository.deleteById(user.getId());
+    public void deleteUser(eUser eUser){
+        this.iUserRepository.deleteById(eUser.getId());
     }
 
-    public List<User> getAllUsers(){
+    public List<eUser> getAllUsers(){
         return this.iUserRepository.findAll();
     }
 }
