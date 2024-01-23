@@ -1,14 +1,14 @@
 # taskManagerAPI-java
 
 ## Aplicativo desenvolvido durante o Curso de <b>Java 17</b>, <b>Spring-Boot</b> & <b>AWS</b> (Udemy)
+-> Curso focado na utilização do Spring-Security e AWS.
 
 ### O curso abordou:
 * Construção de APIs Avançadas com Spring Boot
-* Controlar a versão do código fonte com GitHub
-* Trabalhar com Amazon RDS PostgreSQL
 * Proteger APIs usando Spring Security
-* Automatizar Postman para testar suas APIs
 * Implementar autenticação e autorização utilizando Spring Security
+* Automatizar Postman para testar suas APIs
+* Trabalhar com Amazon RDS PostgreSQL
 * Implantação da API Spring Boot na AWS Elastic Beanstalk
 * Deploy de APIs na nuvem
 
