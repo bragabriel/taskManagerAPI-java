@@ -12,8 +12,13 @@ public class WelcomeController {
         return "Sucesso! Bem-vindo(a) a página default da API!";
     }
 
+    @GetMapping("/welcome-admin")
+    public String welcomeAdmin(@RequestParam(name = "name") String name) {
+        return "Olá Admin '" + name + "', seja muito bem-vindo(a)!";
+    }
+
     @GetMapping("/welcome-user")
-    public String welcomeUser(@RequestParam(name = "nome") String nome) {
-        return "Olá " + nome + ", seja muito bem-vindo(a)!";
+    public String welcomeUser(@RequestParam(name = "name") String name) {
+        return "Olá User '" + name + "', seja muito bem-vindo(a)!";
     }
 }

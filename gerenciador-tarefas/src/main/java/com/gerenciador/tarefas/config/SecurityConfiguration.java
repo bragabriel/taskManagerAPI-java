@@ -46,7 +46,8 @@ public class SecurityConfiguration{
                 .authorizeHttpRequests( auth -> {
                     auth.requestMatchers("/login").permitAll()
                             .requestMatchers(HttpMethod.GET, "/welcome-api").permitAll()
-                            .requestMatchers(HttpMethod.GET, "/welcome-user").hasAuthority(PermissionEnum.ADMIN.toString())
+                            .requestMatchers(HttpMethod.GET, "/welcome-user").hasAuthority(PermissionEnum.USER.toString())
+                            .requestMatchers(HttpMethod.GET, "/welcome-admin").hasAuthority(PermissionEnum.ADMIN.toString())
                             .requestMatchers(HttpMethod.GET, "/usuarios").hasAuthority(PermissionEnum.USER.toString())
                             .requestMatchers(HttpMethod.POST, "/usuarios").hasAuthority(PermissionEnum.ADMIN.toString())
                             .requestMatchers(HttpMethod.POST, "/gerenciador-tarefas").hasAuthority(PermissionEnum.ADMIN.toString())

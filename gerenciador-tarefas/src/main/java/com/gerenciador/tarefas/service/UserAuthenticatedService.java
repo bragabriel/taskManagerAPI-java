@@ -26,7 +26,7 @@ public class UserAuthenticatedService implements UserDetailsService {
         eUser user = iUserRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário " + username + "não foi encontrado"));
 
-        List<SimpleGrantedAuthority> roles = user.getERoles()
+        List<SimpleGrantedAuthority> roles = user.getRoles()
                 .stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName().toString()))
                 .collect(Collectors.toList());

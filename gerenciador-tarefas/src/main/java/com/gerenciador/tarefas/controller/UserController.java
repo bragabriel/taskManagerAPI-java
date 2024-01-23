@@ -17,13 +17,15 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<eUser> saveUser(@RequestBody eUser eUser){
-        return new ResponseEntity<>(userService.saveUser(eUser), HttpStatus.CREATED);
+    public ResponseEntity<String> saveUser(@RequestBody eUser eUser){
+        eUser savedUser = userService.saveUser(eUser);
+        return new ResponseEntity<>("Novo usuário criado: " + savedUser.getUsername(), HttpStatus.CREATED);
     }
 
     @PutMapping
-    public ResponseEntity<eUser> updateUser(@RequestBody eUser eUser){
-        return new ResponseEntity<>(userService.updateUser(eUser), HttpStatus.OK);
+    public ResponseEntity<String> updateUser(@RequestBody eUser eUser){
+        eUser updatedUser = userService.updateUser(eUser);
+        return new ResponseEntity<>("Usuário atualizado com sucesso: " + updatedUser.getUsername(), HttpStatus.OK);
     }
 
     @GetMapping

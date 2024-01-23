@@ -20,7 +20,7 @@ public class eUser implements Serializable {
     private Long id;
     @Column(unique = true, length = 50)
     private String username;
-    @Column(length = 50)
+    @Column(length = 150)
     private String password;
 
     //Relacionamento N-N
@@ -31,5 +31,5 @@ public class eUser implements Serializable {
             inverseJoinColumns = @JoinColumn(name="role_id"), //Junção das colunas será também pela role_id (tabela role)
             uniqueConstraints = @UniqueConstraint(columnNames = {"usuario_id", "role_id"} //Chave unica de acordo com o usuário e role id
     ))
-    private List<eRole> eRoles;
+    private List<eRole> roles;
 }
