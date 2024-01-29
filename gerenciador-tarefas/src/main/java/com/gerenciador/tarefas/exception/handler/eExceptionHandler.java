@@ -35,7 +35,7 @@ public class eExceptionHandler {
         public ResponseEntity<ErrorResponse> naoPermitoAlterarStatusExceptionHandler(NotAllowedChangeStatus ex) {
 
             Map<String, String> response = new HashMap<>();
-            response.put("codigo", ErrorEnum.NAO_PERMITIDO_EXCLUIR.toString());
+            response.put("codigo", ErrorEnum.NAO_PERMITIDO_MUDAR_STATUS.toString());
             response.put("mensagem", ex.getMessage());
 
             ErrorResponse errorResponse =  ErrorResponse
@@ -51,7 +51,7 @@ public class eExceptionHandler {
         public ResponseEntity<ErrorResponse> tarefaExistenteExceptionHandler(TaskNotFoundException ex) {
 
             Map<String, String> response = new HashMap<>();
-            response.put("codigo", ErrorEnum.NAO_PERMITIDO_EXCLUIR.toString());
+            response.put("codigo", ErrorEnum.TAREFA_NAO_EXISTENTE.toString());
             response.put("mensagem", ex.getMessage());
 
             ErrorResponse errorResponse =  ErrorResponse
